@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
+import { getFlux } from "../actions/fluxAction";
 
 import "react-datepicker/dist/react-datepicker.css";
 import "react-bootstrap-table/dist/react-bootstrap-table-all.min.css";
@@ -20,16 +21,31 @@ import { faStroopwafel } from "@fortawesome/free-solid-svg-icons";
 
 library.add(faStroopwafel);
 
-class Console_table extends Component {
+class ConsoleTable extends Component {
   componentDidMount() {
     this.props.getFlux();
-    console.log(this.props.getFlux());
   }
 
-  FluxFormatter(cell) {
+  FluxFormatterBP(cell, row) {
     return (
       <div>
-        <Link to={`/details/${cell}`}>{cell}</Link>
+        <Link to={`/details/BPAD/${row.id}`}>{cell}</Link>
+      </div>
+    );
+  }
+
+  FluxFormatterImport(cell, row) {
+    return (
+      <div>
+        <Link to={`/details/BPAD/${row.id}`}>{cell}</Link>
+      </div>
+    );
+  }
+
+  FluxFormatterResiliation(cell, row) {
+    return (
+      <div>
+        <Link to={`/details/BPAD/${row.id}`}>{cell}</Link>
       </div>
     );
   }
@@ -37,7 +53,7 @@ class Console_table extends Component {
   NbrDocKoFormatter(cell) {
     if (parseInt(cell) > 0) {
       var icone = (
-        <a href="#">
+        <a href="/">
           <FontAwesomeIcon style={{ paddingLeft: "5px" }} icon="stroopwafel" />
         </a>
       );
@@ -76,7 +92,7 @@ class Console_table extends Component {
         }
       >
         <div>
-          <span class={badge} style={{ cursor: "pointer" }}>
+          <span className={badge} style={{ cursor: "pointer" }}>
             {cell}
           </span>
         </div>
@@ -91,18 +107,20 @@ class Console_table extends Component {
           <Tabs defaultActiveKey="home" id="uncontrolled-tab-example">
             <Tab eventKey="home" title="BP/AD" style={{ marginTop: "30px" }}>
               <BootstrapTable
-                data={this.props.dataBpAd}
+                data={this.props.flux.dataBpAd}
                 striped
                 hover
                 pagination
               >
-                <TableHeaderColumn dataField="id">ID</TableHeaderColumn>
+                <TableHeaderColumn hidden dataField="id">
+                  ID
+                </TableHeaderColumn>
                 <TableHeaderColumn
                   row="0"
                   rowSpan="2"
                   isKey
                   dataField="flux"
-                  dataFormat={this.FluxFormatter}
+                  dataFormat={this.FluxFormatterBP}
                   tdClassName="tr-string-example"
                 >
                   Flux
@@ -177,7 +195,7 @@ class Console_table extends Component {
               style={{ marginTop: "30px" }}
             >
               <BootstrapTable
-                data={this.props.dataImport}
+                data={this.props.flux.dataImport}
                 striped
                 hover
                 pagination
@@ -226,7 +244,7 @@ class Console_table extends Component {
               style={{ marginTop: "30px" }}
             >
               <BootstrapTable
-                data={this.props.dataResiliation}
+                data={this.props.flux.dataResiliation}
                 striped
                 hover
                 pagination
@@ -278,8 +296,8 @@ class Console_table extends Component {
   }
 }
 
-Console_table.propTypes = {
-  flux: PropTypes.array.isRequired,
+ConsoleTable.propTypes = {
+  // flux: PropTypes.array.isRequired,
   getFlux: PropTypes.func.isRequired
 };
 
@@ -287,8 +305,7 @@ const mapStateToProps = state => ({
   flux: state.flux.flux
 });
 
-const mapDispatchToProps = (dispatch) => ({
-  getFlux: () => dispatch({ type: "GET_ALL_FLUX" })
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(Console_table);
+export default connect(
+  mapStateToProps,
+  { getFlux }
+)(ConsoleTable);

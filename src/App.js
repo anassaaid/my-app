@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Console from "./components/Console";
-import Details from "./components/Details";
+import DetailsBPAD from "./components/DetailsBPAD";
 import Header from "./components/Header";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Provider } from "react-redux";
@@ -18,7 +18,11 @@ class App extends Component {
               <Header label="BP AD" />
               <Switch>
                 <Route exact path="/" component={Console} />
-                <Route exact path="/details/:flux" component={Details} />
+                <Route
+                  exact
+                  path="/details/BPAD/:id"
+                  component={DetailsBPAD}
+                />
               </Switch>
             </div>
           </div>

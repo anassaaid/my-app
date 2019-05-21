@@ -10,7 +10,7 @@ class Details extends Component {
   render() {
     return (
       <div>
-        Détails...
+        
       </div>
     )
   }
