@@ -14,7 +14,7 @@ class App extends Component {
       <Provider store={store}>
         <Router>
           <div className="App">
-            <div class="container">
+            <div className="container">
               <Header label="BP AD" />
               <Switch>
                 <Route exact path="/" component={Console} />

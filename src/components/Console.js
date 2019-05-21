@@ -1,10 +1,7 @@
 import React, { Component } from "react";
 import DatePicker, { registerLocale } from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import { BootstrapTable, TableHeaderColumn } from "react-bootstrap-table";
 import "react-bootstrap-table/dist/react-bootstrap-table-all.min.css";
-import Tabs from "react-bootstrap/Tabs";
-import Tab from "react-bootstrap/Tab";
 import Console_table from "./Console_table";
 
 class Console extends Component {
@@ -37,13 +34,13 @@ class Console extends Component {
               <div className="col-lg">
                 <button
                   type="button"
-                  class="btn btn-danger"
+                  className="btn btn-danger"
                   style={{
                     float: "right",
                     marginBottom: "20px"
                   }}
                 >
-                  <span class="badge badge-light">4</span> Traitements en
+                  <span className="badge badge-light">4</span> Traitements en
                   erreur
                 </button>
               </div>
@@ -51,9 +48,9 @@ class Console extends Component {
 
             <div className="row">
               <div className="col-lg">
-                <div class="card mb-3">
-                  <div class="card-header">Recherche</div>
-                  <div class="card-body">
+                <div className="card mb-3">
+                  <div className="card-header">Recherche</div>
+                  <div className="card-body">
                     <div className="row">
                       <div className="col">
                         <div className="form-group">
@@ -98,7 +95,7 @@ class Console extends Component {
                       <div className="col">
                         <a
                           href="#"
-                          class="btn btn-primary"
+                          className="btn btn-primary"
                           style={{ float: "right" }}
                         >
                           Valider

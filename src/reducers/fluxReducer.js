@@ -1,4 +1,4 @@
-import { GET_FLUX } from "../actions/types";
+// import { GET_ALL_FLUX } from "../actions/types";
 
 const initialState = {
   flux: {
@@ -136,7 +136,7 @@ const initialState = {
 
 export default function(state = initialState, action) {
   switch (action.type) {
-    case GET_FLUX:
+    case "GET_ALL_FLUX":
       return {
         ...state
       };

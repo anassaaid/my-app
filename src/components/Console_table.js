@@ -2,14 +2,12 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import GET_FLUX from "../actions/types";
 
 import "react-datepicker/dist/react-datepicker.css";
 import "react-bootstrap-table/dist/react-bootstrap-table-all.min.css";
 
 import Tabs from "react-bootstrap/Tabs";
 import Tab from "react-bootstrap/Tab";
-import ButtonToolbar from "react-bootstrap/ButtonToolbar";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Popover from "react-bootstrap/Popover";
 
@@ -19,12 +17,13 @@ import "react-bootstrap-table/dist/react-bootstrap-table-all.min.css";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStroopwafel } from "@fortawesome/free-solid-svg-icons";
-import { stat } from "fs";
+
 library.add(faStroopwafel);
 
 class Console_table extends Component {
   componentDidMount() {
     this.props.getFlux();
+    console.log(this.props.getFlux());
   }
 
   FluxFormatter(cell) {
@@ -279,7 +278,7 @@ class Console_table extends Component {
   }
 }
 
-Console_table.PropTypes = {
+Console_table.propTypes = {
   flux: PropTypes.array.isRequired,
   getFlux: PropTypes.func.isRequired
 };
@@ -289,7 +288,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  getFlux: () => dispatch({ type: GET_FLUX })
+  getFlux: () => dispatch({ type: "GET_ALL_FLUX" })
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Console_table);

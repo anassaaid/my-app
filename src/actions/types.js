@@ -1,1 +1,1 @@
-export const GET_FLUX = "GET_FLUX";
+export const GET_ALL_FLUX = "GET_ALL_FLUX";
