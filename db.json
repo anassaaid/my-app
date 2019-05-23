@@ -79,12 +79,22 @@
     "dataBpAd": [
       {
         "id": 1,
+        "client": "BOUYGUE",
         "flux": "BCP201905161620_bp.zip",
         "statut": "OK",
         "reception": "10/04/2019 08:32",
         "traitement": "10/04/2019 08:45",
         "nbr_doc_a_traiter": 1250,
         "nbr_doc_ko": 0,
+        "details_erreurs": [],
+        "fichiers": [
+          {
+            "file_name": "BCP201905161620_bp.csv"
+          },
+          {
+            "file_name": "BCP201905161620_bp.pdf"
+          }
+        ],
         "digipost_nbr_doc": 1200,
         "digipost_nb_af": 1200,
         "digipost_date_depot": "10/04/2019 08:45",
@@ -96,12 +106,28 @@
       },
       {
         "id": 2,
+        "client": "MATMUT",
         "flux": "MMP201905161615_bp.zip",
         "statut": "WARNING",
         "reception": "10/04/2019 09:00",
         "traitement": "10/04/2019 08:45",
         "nbr_doc_a_traiter": 1113,
         "nbr_doc_ko": 13,
+        "details_erreurs": [],
+        "fichiers": [
+          {
+            "file_name": "MMP201905161615_bp.csv"
+          },
+          {
+            "file_name": "MMP201905161615_bp1.pdf"
+          },
+          {
+            "file_name": "MMP201905161615_bp2.pdf"
+          },
+          {
+            "file_name": "MMP201905161615_bp3.pdf"
+          }
+        ],
         "digipost_nbr_doc": 1100,
         "digipost_nb_af": 0,
         "digipost_date_depot": "10/04/2019 10:45",
@@ -113,12 +139,25 @@
       },
       {
         "id": 3,
+        "client": "MATRA ELECTRONIQUE",
         "flux": "MTA201905161620_bp.zip",
         "statut": "KO",
         "reception": "10/04/2019 16:32",
         "traitement": "10/04/2019 16:45",
         "nbr_doc_a_traiter": 950,
         "nbr_doc_ko": 950,
+        "details_erreurs": [
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+          "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+          "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit"
+        ],
+        "fichiers": [
+          { "file_name": "MTA201905161620_bp.csv" },
+          { "file_name": "MTA201905161620_bp1.pdf" },
+          { "file_name": "MTA201905161620_bp2.pdf" },
+          { "file_name": "MTA201905161620_bp3.pdf" },
+          { "file_name": "MTA201905161620_bp4.pdf" }
+        ],
         "digipost_nbr_doc": 0,
         "digipost_nb_af": 0,
         "digipost_date_depot": "",
@@ -130,12 +169,44 @@
       },
       {
         "id": 4,
+        "client": "ITS-GROUPE",
         "flux": "ITP201905161620_bp.zip",
-        "statut": "KO",
+        "statut": "OK",
         "reception": "10/04/2019 16:32",
         "traitement": "10/04/2019 16:45",
         "nbr_doc_a_traiter": 950,
         "nbr_doc_ko": 950,
+        "details_erreurs": [],
+        "fichiers": [
+          {
+            "file_name": "ITP201905161620_bp.csv"
+          },
+          {
+            "file_name": "ITP201905161620_bp1.pdf"
+          },
+          {
+            "file_name": "ITP201905161620_bp2.pdf"
+          }
+        ],
+        "digipost_nbr_doc": 0,
+        "digipost_nb_af": 0,
+        "digipost_date_depot": "",
+        "editique_nbr_doc": 0,
+        "editique_nb_af": 0,
+        "editique_date_depot": "",
+        "archivage_nb_doc": 0,
+        "archivage_date_depot": ""
+      },
+      {
+        "id": 5,
+        "client": "FRANCE TELEVISIONS",
+        "flux": "FTP201905161620_bp.zip",
+        "statut": "OK",
+        "reception": "10/04/2019 16:32",
+        "traitement": "10/04/2019 16:45",
+        "nbr_doc_a_traiter": 950,
+        "nbr_doc_ko": 950,
+        "details_erreurs": [],
         "digipost_nbr_doc": 0,
         "digipost_nb_af": 0,
         "digipost_date_depot": "",

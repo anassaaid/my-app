@@ -15,11 +15,7 @@ import Popover from "react-bootstrap/Popover";
 import { BootstrapTable, TableHeaderColumn } from "react-bootstrap-table";
 import "react-bootstrap-table/dist/react-bootstrap-table-all.min.css";
 
-import { library } from "@fortawesome/fontawesome-svg-core";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faStroopwafel } from "@fortawesome/free-solid-svg-icons";
-
-library.add(faStroopwafel);
+import { FaInfoCircle } from "react-icons/fa";
 
 class ConsoleTable extends Component {
   componentDidMount() {
@@ -54,7 +50,7 @@ class ConsoleTable extends Component {
     if (parseInt(cell) > 0) {
       var icone = (
         <a href="/">
-          <FontAwesomeIcon style={{ paddingLeft: "5px" }} icon="stroopwafel" />
+          <FaInfoCircle style={{ margin: "10px", color: "black" }} />
         </a>
       );
     }
@@ -110,6 +106,7 @@ class ConsoleTable extends Component {
                 data={this.props.flux.dataBpAd}
                 striped
                 hover
+                search
                 pagination
               >
                 <TableHeaderColumn hidden dataField="id">
@@ -198,6 +195,7 @@ class ConsoleTable extends Component {
                 data={this.props.flux.dataImport}
                 striped
                 hover
+                search
                 pagination
               >
                 <TableHeaderColumn
