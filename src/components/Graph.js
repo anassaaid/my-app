@@ -35,7 +35,7 @@ export default class Graph extends Component {
     Highcharts.chart({
       chart: {
         type: "column",
-        renderTo: "atmospheric-composition",
+        renderTo: "ventilation",
         marginTop: "50",
         marginBottom: "70"
       },
@@ -52,11 +52,11 @@ export default class Graph extends Component {
           innerSize: "50%"
         }
       },
-      series: this.state.series
+        series: this.props.series
     });
   }
 
   render() {
-    return <div id="atmospheric-composition" style={{height:"200px"}} />;
+    return <div id="ventilation" style={{height:"200px"}} />;
   }
 }

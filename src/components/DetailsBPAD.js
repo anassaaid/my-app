@@ -58,6 +58,24 @@ class DetailsBPAD extends Component {
       }
 
       let modalClose = () => this.setState({ modalShow: false });
+      
+      let series= [
+        {
+          name: "Ventilation",
+          data: [
+            {
+              name: "Editique",
+              y: res.editique_nbr_doc,
+              color: "#3498db"
+            },
+            {
+              name: "Digiposte",
+              y: res.digipost_nbr_doc,
+              color: "#9b59b6"
+            }
+          ]
+        }
+      ]
 
       return (
         <div className="container">
@@ -138,7 +156,7 @@ class DetailsBPAD extends Component {
                           <h5 className="card-title">Ventilation</h5>
                           <div className="row">
                             <div className="col">
-                              <Graph />
+                              <Graph series={series} />
                             </div>
                           </div>
                         </div>
