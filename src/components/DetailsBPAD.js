@@ -135,7 +135,7 @@ class DetailsBPAD extends Component {
                         style={{ width: "18rem", marginTop: "40px" }}
                       >
                         <div className="card-body">
-                          <h5 className="card-title">Statistiques</h5>
+                          <h5 className="card-title">Ventilation</h5>
                           <div className="row">
                             <div className="col">
                               <Graph />

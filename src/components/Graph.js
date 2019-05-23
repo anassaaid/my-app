@@ -57,6 +57,6 @@ export default class Graph extends Component {
   }
 
   render() {
-    return <div id="atmospheric-composition" />;
+    return <div id="atmospheric-composition" style={{height:"200px"}} />;
   }
 }
